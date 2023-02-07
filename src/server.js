@@ -7,11 +7,11 @@ wss.on('connection', (ws) => {
   ws.send('Welcome new client!')
 
   ws.on('message', (data) => {
-    console.log(`received a message: ${data}`)
+    console.log(`Server has received a message: ${data}`)
     ws.send(`Your message: ${data}`)
     wss.clients.forEach((client) => {
       if (client !== ws && client.readyState === WebSocket.OPEN) {
-        client.send(data)
+        client.send(`You received a message: ${data}`)
       }
     })
   })
