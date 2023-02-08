@@ -16,3 +16,22 @@ wss.on('connection', (ws) => {
     })
   })
 })
+
+// import WebSocket, { WebSocketServer } from 'ws'
+
+// const wss = new WebSocketServer({port:8080})
+
+// wss.on('connection', (ws) => {
+//   console.log('A new client has connected!')
+//   ws.send('Welcome new client!')
+
+//   ws.on('message', (data) => {
+//     console.log(`Server has received a message: ${data}`)
+//     ws.send(`You have sent this message: ${data}`)
+//     wss.clients.forEach((client) => {
+//       if (client !== ws && client.readyState === WebSocket.OPEN) {
+//         client.send(`You have received a message: ${data}`)
+//       }
+//     })
+//   })
+// })
